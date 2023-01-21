@@ -2,6 +2,7 @@ import { HomePage } from './Home/HomePage';
 import { ProfilePage } from './Profile/ProfilePage';
 import { NewUserForm } from './Profile/NewUserForm';
 import { LoginForm } from './Profile/LoginForm';
+import { DownloadsPage } from './Downloads/DownloadsPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="login" element={<LoginForm />} />
           <Route path="newUser" element={<NewUserForm />} />
         </Route>
+        <Route path="downloads" element={<DownloadsPage />} />
       </Routes>
     </BrowserRouter>
   );
