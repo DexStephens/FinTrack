@@ -8,6 +8,7 @@ import { LoginForm } from './Profile/LoginForm';
 import { Footer } from './Home/Footer';
 import { NotFoundPage } from './Home/NotFoundPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Header } from './Home/Header';
 function App() {
   return (
     <div
@@ -20,7 +21,7 @@ function App() {
       `}
     >
       <BrowserRouter>
-        <h1>This is the header</h1>
+        <Header />
         <div
           css={css`
             flex-grow: 1;
