@@ -5,6 +5,7 @@ import { HomePage } from './Home/HomePage';
 import { ProfilePage } from './Profile/ProfilePage';
 import { NewUserForm } from './Profile/NewUserForm';
 import { LoginForm } from './Profile/LoginForm';
+import { DownloadsPage } from './Downloads/DownloadsPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Header } from './Home/Header';
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="login" element={<LoginForm />} />
           <Route path="newUser" element={<NewUserForm />} />
         </Route>
+        <Route path="downloadsPage" element={<DownloadsPage />} />
       </Routes>
     </BrowserRouter>
   );

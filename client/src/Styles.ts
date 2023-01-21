@@ -45,3 +45,7 @@ export const PrimaryButton = styled.button`
     cursor: not-allowed;
   }
 `;
+
+export const customTableHead = styled.th`
+  background-color: ${gray1};
+`;
