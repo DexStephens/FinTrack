@@ -24,6 +24,8 @@ function App() {
         <div
           css={css`
             flex-grow: 1;
+            padding-top: 10vh;
+            background-color: #000000;
           `}
         >
           <Routes>

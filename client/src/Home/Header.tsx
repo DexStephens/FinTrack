@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { UserIcon } from '../Layout/Icons';
+import { Link } from 'react-router-dom';
 export const Header = () => {
   return (
     <div
@@ -13,16 +14,21 @@ export const Header = () => {
         align-items: center;
         justify-content: space-between;
         padding: 10px 20px;
-        background-color: #fff;
-        border-bottom: 1px solid #fafafa;
-        box-shadow: 0 3px 7px 0 rgba(110, 112, 114, 0.21);
+        background-color: #000000;
+        color: white;
       `}
     >
-      <h4>FinTrack</h4>
+      <h4
+        css={css`
+          font-size: 1.2em;
+        `}
+      >
+        FinTrack
+      </h4>
       <div>
-        <span>Finances</span>
+        <Link to="">Finances</Link>
         <UserIcon />
-        <span>Login</span>
+        <Link to="profile">Login</Link>
       </div>
     </div>
   );
