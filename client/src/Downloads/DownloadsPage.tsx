@@ -7,6 +7,7 @@ export const DownloadsPage = () => {
       <center
         css={css`
           margin-top: 100px;
+          color: white;
         `}
       >
         <p>Blah Blah Blah some statement about what we do here</p>
