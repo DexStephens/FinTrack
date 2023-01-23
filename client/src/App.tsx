@@ -33,6 +33,7 @@ function App() {
               <Route path="login" element={<LoginForm />} />
               <Route path="newUser" element={<NewUserForm />} />
             </Route>
+            <Route path="downloadsPage" element={<DownloadsPage />} />
           </Routes>
         </div>
         <Footer />
