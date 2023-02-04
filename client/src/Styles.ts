@@ -94,3 +94,10 @@ export const FormButtonContainer = styled.div`
   display: flex;
   justify-content: center;
 `;
+
+// NEW STYLES FOR HOME PAGE
+export const Wrapper = styled.div`
+  width: 100%;
+  height: 100vh;
+  color: #008631;
+`;

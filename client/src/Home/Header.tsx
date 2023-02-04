@@ -2,34 +2,23 @@
 import { css } from '@emotion/react';
 import { UserIcon } from '../Layout/Icons';
 import { Link } from 'react-router-dom';
+import '../myCSS.css';
+
 export const Header = () => {
   return (
-    <div
-      css={css`
-        position: fixed;
-        box-sizing: border-box;
-        top: 0;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 10px 20px;
-        background-color: #000000;
-        color: white;
-      `}
-    >
-      <h4
-        css={css`
-          font-size: 1.2em;
-        `}
-      >
-        FinTrack
-      </h4>
-      <div>
-        <Link to="">Finances</Link>
-        <UserIcon />
-        <Link to="profile">Login</Link>
-      </div>
-    </div>
+    <>
+      <nav>
+        <div className="logo">Fintrack</div>
+        <div className="linkContainer">
+          <Link to="" className="navLink">
+            Finances
+          </Link>
+          <UserIcon />
+          <Link to="profile" className="navLink">
+            Login
+          </Link>
+        </div>
+      </nav>
+    </>
   );
 };
