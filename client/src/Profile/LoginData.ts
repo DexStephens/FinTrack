@@ -1,4 +1,4 @@
-export interface LoginData {
+export interface UserData {
   userId: number;
   email: string;
   password: string;
@@ -13,18 +13,23 @@ export interface PostLoginData {
   lastName: string;
 }
 
-const logins: LoginData[] = [
+export interface CheckLoginData {
+  email: string;
+  password: string;
+}
+
+const users: UserData[] = [
   {
     userId: 1,
     email: 'dexter@gmail.com',
-    password: '1234',
+    password: 'abcdeF1!',
     firstName: 'Dexter',
     lastName: 'Stephens',
   },
   {
     userId: 2,
     email: 'jack@gmail.com',
-    password: '12345',
+    password: '12345aB#',
     firstName: 'Jack',
     lastName: 'Huish',
   },
@@ -50,13 +55,27 @@ const wait = (ms: number): Promise<void> => {
 
 export const PostUser = async (
   login: PostLoginData,
-): Promise<LoginData | undefined> => {
+): Promise<UserData | undefined> => {
   await wait(500);
-  const userId = Math.max(...logins.map((l) => l.userId)) + 1;
-  const newLogin: LoginData = {
+  const userId = Math.max(...users.map((l) => l.userId)) + 1;
+  const newLogin: UserData = {
     ...login,
     userId: userId,
   };
-  logins.push(newLogin);
+  users.push(newLogin);
   return newLogin;
+};
+
+export const CheckLogin = async (
+  login: CheckLoginData,
+): Promise<UserData | undefined> => {
+  debugger;
+  await wait(500);
+  const userPresent = users.find(
+    (l) => l.email === login.email && l.password === login.password,
+  );
+  if (userPresent === undefined) {
+    return undefined;
+  }
+  return userPresent;
 };
