@@ -73,18 +73,24 @@ const baseFieldCSS = css`
   :disabled {
     background-color: ${secondaryGrey};
   }
+  display: inline-block;
 `;
 
 export const FieldInput = styled.input`
-  ${baseFieldCSS}
+  ${baseFieldCSS};
+  width: 250px;
+  margin-left: 25px;
+  vertical-align: baseline;
 `;
 
 export const FieldLabel = styled.label`
   font-weight: bold;
+  display: inline-block;
 `;
 
 export const FieldContainer = styled.div`
   margin-bottom: 10px;
+  width: 500px auto;
 `;
 
 export const FormButtonContainer = styled.div`

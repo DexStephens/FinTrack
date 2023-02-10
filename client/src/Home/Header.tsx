@@ -14,7 +14,7 @@ export const Header = () => {
             Finances
           </Link>
           <UserIcon />
-          <Link to="profile" className="navLink">
+          <Link to="profile/login" className="navLink">
             Login
           </Link>
         </div>

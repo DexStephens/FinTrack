@@ -68,6 +68,10 @@ section {
 
 .one {
   background-image: linear-gradient(180deg, Black, #76af31);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .subheading {
