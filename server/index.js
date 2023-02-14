@@ -1,11 +1,18 @@
 const express = require('express');
+const dotenv = require('dotenv');
 const userRouter = require('./src/routes/user.route.js');
+const bodyParser = require('body-parser');
+const auth = require('./src/middleware/auth.middleware');
+
+dotenv.config();
 
 const app = express();
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
+app.use(bodyParser.json());
+
+app.get('/', auth, (req, res) => {
     res.json({'message': 'ok'});
 })
 
