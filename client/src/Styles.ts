@@ -42,7 +42,7 @@ export const ProfileFieldset = styled.fieldset`
   background-color: ${secondaryGrey};
   border-radius: 4px;
   border: 1px solid ${primaryGrey};
-  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.16);
+  box-shadow: 10px 5px 5px #7d7d7d;
 `;
 
 export const PrimaryButton = styled.button`

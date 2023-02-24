@@ -8,7 +8,7 @@ export const Banner = () => {
     <>
       <section className="one">
         <div className="content fade-in">
-          <h1>Fintrack</h1>
+          <h1 className="heading">Fintrack</h1>
           <p className="subheading">
             Here at Fintrack we want to help make the idea of gaining financial
             independence a little bit easier. We've developed tools and systems

@@ -9,8 +9,8 @@ export const DownloadsPage = () => {
         <div className="content">
           <center
             css={css`
-              margin-top: 100px;
-              color: white;
+              margin-top: 0px;
+              color: black;
             `}
           >
             <p>Blah Blah Blah some statement about what we do here</p>
@@ -24,13 +24,15 @@ export const DownloadsPage = () => {
                 box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
                   0 0 0 2px rgb(255, 255, 255),
                   0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+                background-color: #7d7d7d;
               `}
             >
               <thead
                 css={css`
                   border: 1px solid black;
-                  background-color: gray;
+                  background-color: rgb(25, 115, 48);
                   height: 50px;
+                  color: white;
                 `}
               >
                 <tr>
@@ -58,9 +60,14 @@ export const DownloadsPage = () => {
                   height: 100px;
                   text-align: center;
                   margin-left: 25px;
+                  color: black;
                 `}
               >
-                <tr>
+                <tr
+                  css={css`
+                    color: black;
+                  `}
+                >
                   <td>Singles Life Planning</td>
                   <td>
                     Here you can plan your life -- planning for single people
@@ -72,7 +79,11 @@ export const DownloadsPage = () => {
                     </a>
                   </td>
                 </tr>
-                <tr>
+                <tr
+                  css={css`
+                    color: black;
+                  `}
+                >
                   <td>Duos Life Planning</td>
                   <td>
                     Here you can plan your life AND the life of your significant
