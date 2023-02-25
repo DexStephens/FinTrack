@@ -10,7 +10,10 @@ import {
 } from '../Styles';
 import { useForm } from 'react-hook-form';
 import '../myCSS.css';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
+import axios from 'axios';
+import React from 'react';
 
 type FormData = {
   firstName: string;
@@ -19,7 +22,18 @@ type FormData = {
   password: string;
 };
 
+type NewUser = {
+  id: number;
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+  token: string;
+};
+
 export const NewUserForm = () => {
+  const [user, setUser] = React.useState<NewUser | null>(null);
+  const [cookies, setCookie] = useCookies(['token']);
   const {
     register,
     handleSubmit,
@@ -28,15 +42,27 @@ export const NewUserForm = () => {
     mode: 'onBlur',
   });
 
-  const submitForm = (data: FormData) => {
-    //post the user to the data
-    //eventually call the api
+  const setToken = (newToken: string) => {
+    setCookie('token', newToken, { path: '/' });
+  };
+
+  const CreateUser = async (form: FormData) => {
+    await axios
+      .post<NewUser>('http://localhost:52345/user/createUser', {
+        user: form,
+      })
+      .then((response) => {
+        setToken(response.data.token);
+        setUser(response.data);
+      })
+      .catch((error) => {});
   };
 
   return (
     <section className="one">
       <div className="content">
-        <form onSubmit={handleSubmit(submitForm)}>
+        {user && <Navigate to="/downloadsPage" replace={true} />}
+        <form onSubmit={handleSubmit(CreateUser)}>
           <ProfileFieldset>
             <div
               css={css`
@@ -132,9 +158,9 @@ export const NewUserForm = () => {
               <Link className="buttons" to="../login">
                 Go Back
               </Link>
-              <Link className="buttons" to="../login">
+              <button className="buttons" type="submit">
                 Create New User
-              </Link>
+              </button>
             </FormButtonContainer>
           </ProfileFieldset>
         </form>

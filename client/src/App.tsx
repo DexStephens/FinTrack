@@ -9,38 +9,42 @@ import { DownloadsPage } from './Downloads/DownloadsPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Header } from './Home/Header';
 import { Footer } from './Home/Footer';
+import { CookiesProvider } from 'react-cookie';
+
 function App() {
   return (
-    <BrowserRouter>
-      <div
-        css={css`
-          min-height: 100vh;
-          margin: 0;
-          padding: 0;
-          display: flex;
-          flex-direction: column;
-        `}
-      >
-        <Header />
+    <CookiesProvider>
+      <BrowserRouter>
         <div
           css={css`
-            flex-grow: 1;
-            padding-top: 10vh;
-            background-color: #000000;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
           `}
         >
-          <Routes>
-            <Route path="" element={<HomePage />} />
-            <Route path="profile" element={<ProfilePage />}>
-              <Route path="login" element={<LoginForm />} />
-              <Route path="newUser" element={<NewUserForm />} />
-            </Route>
-            <Route path="downloadsPage" element={<DownloadsPage />} />
-          </Routes>
+          <Header />
+          <div
+            css={css`
+              flex-grow: 1;
+              padding-top: 10vh;
+              background-color: #000000;
+            `}
+          >
+            <Routes>
+              <Route path="" element={<HomePage />} />
+              <Route path="profile" element={<ProfilePage />}>
+                <Route path="login" element={<LoginForm />} />
+                <Route path="newUser" element={<NewUserForm />} />
+              </Route>
+              <Route path="downloadsPage" element={<DownloadsPage />} />
+            </Routes>
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </CookiesProvider>
   );
 }
 
