@@ -38,7 +38,7 @@ export const HomeCard = styled.div`
 export const ProfileFieldset = styled.fieldset`
   margin: 10px auto 0 auto;
   padding: 30px;
-  width: 350px;
+  width: 375px;
   background-color: ${secondaryGrey};
   border-radius: 4px;
   border: 1px solid ${primaryGrey};
@@ -79,13 +79,12 @@ const baseFieldCSS = css`
 export const FieldInput = styled.input`
   ${baseFieldCSS};
   width: 250px;
-  margin-left: 25px;
-  vertical-align: baseline;
+  display: inline-block;
 `;
 
 export const FieldLabel = styled.label`
   font-weight: bold;
-  display: inline-block;
+  width: 150px;
 `;
 
 export const FieldContainer = styled.div`
@@ -94,8 +93,7 @@ export const FieldContainer = styled.div`
 `;
 
 export const FormButtonContainer = styled.div`
-  margin: 30px 0px 0px 0px;
-  padding: 20px 0px 0px 0px;
+  margin: 24px 0px 0px 0px;
   border-top: 1px solid ${secondaryGrey};
   display: flex;
   justify-content: center;

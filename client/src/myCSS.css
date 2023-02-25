@@ -9,7 +9,6 @@ nav {
   top: 0;
   left: 0;
   right: 0;
-  box-shadow: 4px 0px 12px 12px #000000;
 }
 
 nav .logo {
@@ -117,8 +116,33 @@ h1 {
   border-radius: 5px;
   color: rgb(255, 255, 255);
   display: inline-block;
+  text-decoration: none;
 }
 
 .buttons:hover {
   background-color: rgb(17, 85, 34);
+}
+
+.myLabel {
+  float: left;
+  width: 85px;
+  text-align: right;
+  font-weight: bold;
+  padding-top: 6px;
+}
+
+.myInput {
+  width: 250px;
+  height: 24px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+.formInputs {
+  margin-bottom: 10px;
+}
+
+.inputError {
+  color: rgb(190, 0, 0);
+  font-weight: bold;
 }

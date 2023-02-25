@@ -50,28 +50,27 @@ export const LoginForm = () => {
       <div className="content">
         <form onSubmit={handleSubmit(submitForm)}>
           <ProfileFieldset disabled={isSubmitting || successfullySubmitted}>
-            <div
-              css={css`
-                display: flex;
-                justify-content: center;
-              `}
-            >
-              <h2>Login</h2>
-            </div>
-            <FieldContainer>
-              <FieldLabel htmlFor="email">Email</FieldLabel>
-              <FieldInput
+            <h2>Login</h2>
+            <div className="formInputs">
+              <label htmlFor="" className="myLabel">
+                Email
+              </label>
+              <input
+                className="myInput"
                 type="text"
                 id="email"
                 {...register('email', { required: true })}
               />
               {errors.email?.type === 'required' && (
-                <p>Please enter your email</p>
+                <p className="inputError">Please enter your email</p>
               )}
-            </FieldContainer>
-            <FieldContainer>
-              <FieldLabel htmlFor="password">Password</FieldLabel>
-              <FieldInput
+            </div>
+            <div className="formInputs">
+              <label htmlFor="" className="myLabel">
+                Password
+              </label>
+              <input
+                className="myInput"
                 type="text"
                 id="password"
                 {...register('password', {
@@ -79,9 +78,9 @@ export const LoginForm = () => {
                 })}
               />
               {errors.password?.type === 'required' && (
-                <p>Please enter your password</p>
+                <p className="inputError">Please enter your password</p>
               )}
-            </FieldContainer>
+            </div>
             {invalidUser && <h3>Email or password is invalid</h3>}
             <FormButtonContainer>
               <Link className="buttons" to="../login">

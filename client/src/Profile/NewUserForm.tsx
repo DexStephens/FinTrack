@@ -47,37 +47,50 @@ export const NewUserForm = () => {
               <h2>Create a New User</h2>
             </div>
 
-            <FieldContainer>
-              <FieldLabel htmlFor="firstName">First Name</FieldLabel>
-              <FieldInput
+            <div className="formInputs">
+              <label className="myLabel" htmlFor="firstName">
+                First Name
+              </label>
+              <input
+                className="myInput"
                 id="firstName"
                 type="text"
                 {...register('firstName', { required: true, minLength: 2 })}
               />
               {errors.firstName?.type === 'required' && (
-                <p>First name is required</p>
+                <p className="inputError">First name is required</p>
               )}
               {errors.firstName?.type === 'minLength' && (
-                <p>First name must have at least two characters</p>
+                <p className="inputError">
+                  First name must have at least two characters
+                </p>
               )}
-            </FieldContainer>
-            <FieldContainer>
-              <FieldLabel htmlFor="lastName">Last Name</FieldLabel>
-              <FieldInput
+            </div>
+            <div className="formInputs">
+              <label className="myLabel" htmlFor="lastName">
+                Last Name
+              </label>
+              <input
+                className="myInput"
                 id="lastName"
                 type="text"
                 {...register('lastName', { required: true, minLength: 2 })}
               />
               {errors.lastName?.type === 'required' && (
-                <p>Last name is required</p>
+                <p className="inputError">Last name is required</p>
               )}
               {errors.lastName?.type === 'minLength' && (
-                <p>Last name must have at least two characters</p>
+                <p className="inputError">
+                  Last name must have at least two characters
+                </p>
               )}
-            </FieldContainer>
-            <FieldContainer>
-              <FieldLabel htmlFor="email">Email</FieldLabel>
-              <FieldInput
+            </div>
+            <div className="formInputs">
+              <label className="myLabel" htmlFor="email">
+                Email
+              </label>
+              <input
+                className="myInput"
                 id="email"
                 type="text"
                 {...register('email', {
@@ -85,14 +98,19 @@ export const NewUserForm = () => {
                   pattern: /.+@\w+\.\w+/,
                 })}
               />
-              {errors.email?.type === 'required' && <p>Email is required</p>}
-              {errors.email?.type === 'pattern' && (
-                <p>Please use a valid email</p>
+              {errors.email?.type === 'required' && (
+                <p className="inputError">Email is required</p>
               )}
-            </FieldContainer>
-            <FieldContainer>
-              <FieldLabel htmlFor="password">Password</FieldLabel>
-              <FieldInput
+              {errors.email?.type === 'pattern' && (
+                <p className="inputError">Please use a valid email</p>
+              )}
+            </div>
+            <div className="formInputs">
+              <label className="myLabel" htmlFor="password">
+                Password
+              </label>
+              <input
+                className="myInput"
                 id="password"
                 type="text"
                 {...register('password', {
@@ -102,12 +120,14 @@ export const NewUserForm = () => {
                 })}
               />
               {errors.password?.type === 'required' && (
-                <p>Adding a password is required</p>
+                <p className="inputError">Adding a password is required</p>
               )}
               {errors.password?.type === 'pattern' && (
-                <p>The password does not meet the specified pattern</p>
+                <p className="inputError">
+                  The password does not meet the specified pattern
+                </p>
               )}
-            </FieldContainer>
+            </div>
             <FormButtonContainer>
               <Link className="buttons" to="../login">
                 Go Back
