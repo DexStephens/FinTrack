@@ -20,10 +20,10 @@ async function createUser(req, res, next) {
     try {
         //need to create a user object from the request body
         const user = {
-            'first_name': req.body.first_name,
-            'last_name': req.body.last_name,
-            'email': req.body.email,
-            'password': req.body.password
+            'first_name': req.body.user.firstName,
+            'last_name': req.body.user.lastName,
+            'email': req.body.user.email,
+            'password': req.body.user.password
         }
         const newUser = await userService.createUser(user);
         if (newUser === null) {
