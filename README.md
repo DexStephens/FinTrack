@@ -1,23 +1,29 @@
 # FinTrack
+
 Website to publish excel spread sheet for managing finances.
 
 #Backend
 Architecture
 https://github.com/geshan/expressjs-structure
 Configs
+
 - keeps all the configs needed for the application
-Controllers
+  Controllers
 - get the request from the routes and convert them to http responses with the use of any middlewares as necessary
-Middlewares
+  Middlewares
 - authentication, logging, or any other purpose
-Routes
+  Routes
 - will have a single file for each logical set of routes
-Models
+  Models
 - data models required for the application
-Services
+  Services
 - all the business logic, can have services that represent business objects and can run queries on the database
-Utils
+  Utils
 - will have all the utilities and helpers needed for the application
-Schema Validation
+  Schema Validation
 - schema validation is done using body-parser and jsonschema, stored in the middleware
-https://snowball.digital/blog/validating-rest-endpoints-with-json-schemas-using-express-and-node-js
+  https://snowball.digital/blog/validating-rest-endpoints-with-json-schemas-using-express-and-node-js
+
+# email: fintrackplanning@gmail.com
+
+# password: bowsandarrows

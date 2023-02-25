@@ -117,6 +117,11 @@ h1 {
   color: rgb(255, 255, 255);
   display: inline-block;
   text-decoration: none;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .buttons:hover {
