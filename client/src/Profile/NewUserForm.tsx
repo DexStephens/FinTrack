@@ -12,8 +12,9 @@ import { useForm } from 'react-hook-form';
 import '../myCSS.css';
 import { Link, Navigate } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
+import { useAppDispatch, useAppSelector } from '../hooks';
+import { assign, User } from '../user/usersSlice';
 import axios from 'axios';
-import React from 'react';
 
 type FormData = {
   firstName: string;
@@ -24,16 +25,19 @@ type FormData = {
 
 type NewUser = {
   id: number;
-  firstName: string;
-  lastName: string;
+  first_name: string;
+  last_name: string;
   email: string;
   password: string;
   token: string;
 };
 
 export const NewUserForm = () => {
-  const [user, setUser] = React.useState<NewUser | null>(null);
+  const user = useAppSelector((state) => state.user.user);
+  const dispatch = useAppDispatch();
+
   const [cookies, setCookie] = useCookies(['token']);
+
   const {
     register,
     handleSubmit,
@@ -52,8 +56,14 @@ export const NewUserForm = () => {
         user: form,
       })
       .then((response) => {
+        const newUser: User = {
+          id: response.data.id,
+          firstName: response.data.first_name,
+          lastName: response.data.last_name,
+          email: response.data.email,
+        };
+        dispatch(assign(newUser));
         setToken(response.data.token);
-        setUser(response.data);
       })
       .catch((error) => {});
   };
@@ -61,7 +71,7 @@ export const NewUserForm = () => {
   return (
     <section className="one">
       <div className="content">
-        {user && <Navigate to="/downloadsPage" replace={true} />}
+        {user.id !== 0 && <Navigate to="/downloadsPage" replace={true} />}
         <form onSubmit={handleSubmit(CreateUser)}>
           <ProfileFieldset>
             <div
