@@ -24,6 +24,5 @@ Configs
 - schema validation is done using body-parser and jsonschema, stored in the middleware
   https://snowball.digital/blog/validating-rest-endpoints-with-json-schemas-using-express-and-node-js
 
-# email: fintrackplanning@gmail.com
-
-# password: bowsandarrows
+Tutorial planning to follow to integrate paypal:
+https://www.nodejsera.com/paypal-payment-integration-using-nodejs-part1.html
