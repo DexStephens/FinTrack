@@ -71,7 +71,7 @@ export const NewUserForm = () => {
   return (
     <section className="one">
       <div className="content">
-        {user.id !== 0 && <Navigate to="/downloadsPage" replace={true} />}
+        {user.id !== 0 && <Navigate to="/profile/home" replace={true} />}
         <form onSubmit={handleSubmit(CreateUser)}>
           <ProfileFieldset>
             <div

@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Header } from './Home/Header';
 import { Footer } from './Home/Footer';
 import { CookiesProvider } from 'react-cookie';
+import { ProfileHome } from './Profile/ProfileHome';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
               <Route path="profile" element={<ProfilePage />}>
                 <Route path="login" element={<LoginForm />} />
                 <Route path="newUser" element={<NewUserForm />} />
+                <Route path="home" element={<ProfileHome />} />
               </Route>
               <Route path="downloadsPage" element={<DownloadsPage />} />
             </Routes>
