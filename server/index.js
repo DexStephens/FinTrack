@@ -2,6 +2,8 @@ const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const userRouter = require('./src/routes/user.route.js');
+const incomeRouter = require('./src/routes/income.route.js');
+const expenseRouter = require('./src/routes/expense.route.js');
 const bodyParser = require('body-parser');
 const auth = require('./src/middleware/auth.middleware');
 
@@ -14,9 +16,8 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('/', auth, (req, res) => {
-    res.json({'message': 'ok'});
-})
+app.use('/incomes', auth, incomeRouter);
+app.use('/expenses', auth, expenseRouter);
 
 app.use('/user', userRouter);
 

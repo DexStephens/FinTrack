@@ -53,7 +53,7 @@ export const NewUserForm = () => {
   const CreateUser = async (form: FormData) => {
     await axios
       .post<NewUser>('http://localhost:52345/user/createUser', {
-        user: form,
+        form,
       })
       .then((response) => {
         const newUser: User = {
